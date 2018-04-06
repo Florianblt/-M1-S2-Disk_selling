@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS Client CASCADE;
 
 CREATE TABLE Client
 (
-  idClient serial NOT NULL,
+  idClient int NOT NULL,
   nom varchar(100) NOT NULL,
   mail varchar(100) NOT NULL,
   password varchar(100) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE Client
 
 CREATE TABLE Liste
 (
-  idListe serial NOT NULL,
+  idListe int NOT NULL,
   date Date NOT NULL,
   etat int NOT NULL,
   total numeric(8,2) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE Liste
 
 CREATE TABLE Article
 (
-  idArticle serial NOT NULL,
+  idArticle int NOT NULL,
   titre varchar(100) NOT NULL,
   description varchar(255) NOT NULL,
   prix numeric(8,2) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE Article
 
 CREATE Table Format
 (
-  idFormat serial NOT NULL,
+  idFormat int NOT NULL,
   idArticle int NOT NULL references Article,
   libelleFormat varchar(100) NOT NULL,
   PRIMARY KEY(idFormat)

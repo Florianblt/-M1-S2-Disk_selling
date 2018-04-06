@@ -3,10 +3,12 @@ package com.dev.selldisk.services;
 import com.dev.selldisk.model.Article;
 import com.dev.selldisk.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class ArticleServiceImpl implements IArticleService {
     @Autowired
     private ArticleRepository articleRepository;

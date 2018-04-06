@@ -8,12 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="articles")
+@Table(name="article")
 public class Article implements Serializable {
     private static final long serialVersionUID = 1L;
+
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="idarticle")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long idArticle;
 
     @Column(name="titre")
@@ -24,12 +25,6 @@ public class Article implements Serializable {
 
     @Column(name="prix")
     private float prix;
-
-    public Article(String titre, String description, float prix) {
-        this.titre = titre;
-        this.description = description;
-        this.prix = prix;
-    }
 
     public long getIdArticle() {
         return idArticle;
