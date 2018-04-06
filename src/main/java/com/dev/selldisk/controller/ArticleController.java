@@ -13,23 +13,23 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @Controller
-@RequestMapping("user")
+@RequestMapping("article")
 public class ArticleController {
 
     @Autowired
     private IArticleService articleService;
 
-    @GetMapping("article/{id}")
+    @GetMapping("get/{id}")
     public ResponseEntity<Article> getArticleById(@PathVariable("id") Integer id) {
         Article article = articleService.getArticleById(id);
         return new ResponseEntity<Article>(article, HttpStatus.OK);
     }
-    @GetMapping("articles")
+    @GetMapping("getAll")
     public ResponseEntity<List<Article>> getAllArticles() {
         List<Article> list = articleService.getAllArticles();
         return new ResponseEntity<List<Article>>(list, HttpStatus.OK);
     }
-    @PostMapping("article")
+    @PostMapping("add")
     public ResponseEntity<Void> addArticle(@RequestBody Article article, UriComponentsBuilder builder) {
         boolean flag = articleService.addArticle(article);
         if (flag == false) {
@@ -39,12 +39,12 @@ public class ArticleController {
         headers.setLocation(builder.path("/article/{id}").buildAndExpand(article.getIdArticle()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
-    @PutMapping("article")
+    @PutMapping("update")
     public ResponseEntity<Article> updateArticle(@RequestBody Article article) {
         articleService.updateArticle(article);
         return new ResponseEntity<Article>(article, HttpStatus.OK);
     }
-    @DeleteMapping("article/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<Void> deleteArticle(@PathVariable("id") Integer id) {
         articleService.deleteArticle(id);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
