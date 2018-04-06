@@ -3,3 +3,6 @@
 \gradle
 \out
 \build
+front/sell-disk-app/node_modules
+
+gradlew

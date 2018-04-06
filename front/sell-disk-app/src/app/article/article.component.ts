@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Article} from '../models/article';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-article',
@@ -8,19 +9,16 @@ import {Article} from '../models/article';
 })
 export class ArticleComponent implements OnInit {
 
-  article: Article;
+  article: any;
 
-  constructor() {
+  constructor(private http: HttpClient) {
 
   }
 
   ngOnInit() {
-    this.article = {
-      idArticle: 1,
-      titre: 'La vrai vie',
-      description: 'Album de Big Flo & Oli',
-      prix: 14.99
-    }
+    this.http.get('http://localhost:8080/article/get/1').subscribe(data => {
+      this.article = data;
+    });
   }
 
 }
