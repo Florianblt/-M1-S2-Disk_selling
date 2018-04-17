@@ -6,3 +6,5 @@
 front/sell-disk-app/node_modules
 
 gradlew
+
+src/main/resources/application\.properties
