@@ -26,7 +26,7 @@ CREATE TABLE Liste
 
 CREATE TABLE Article
 (
-  idArticle int NOT NULL,
+  idArticle serial NOT NULL,
   titre varchar(100) NOT NULL,
   description varchar(255) NOT NULL,
   prix numeric(8,2) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE Article
 
 CREATE Table Format
 (
-  idFormat int NOT NULL,
+  idFormat serial NOT NULL,
   idArticle int NOT NULL references Article,
   libelleFormat varchar(100) NOT NULL,
   PRIMARY KEY(idFormat)
@@ -48,5 +48,7 @@ CREATE Table LigneArticle
   quantite int NOT NULL,
   primary key (idArticle, idListe)
 );
+
+
 INSERT INTO Article VALUES (DEFAULT,'Article de test','Description de test',20);
 INSERT INTO Format VALUES (DEFAULT, 1, 'Disque');

@@ -1,7 +1,8 @@
-package com.dev.selldisk.services;
+package com.dev.selldisk.services.Impl;
 
 import com.dev.selldisk.model.Article;
 import com.dev.selldisk.repository.ArticleRepository;
+import com.dev.selldisk.services.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
