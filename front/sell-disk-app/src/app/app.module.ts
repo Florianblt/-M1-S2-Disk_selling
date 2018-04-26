@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 
 import {ArticleComponent} from "./article/article.component";
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MaterialModule} from "./material.module";
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
