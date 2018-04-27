@@ -1,12 +1,9 @@
 package com.dev.selldisk.model;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+import javax.persistence.*;
+
 @Entity
 @Table(name="article")
 public class Article implements Serializable {
@@ -23,8 +20,8 @@ public class Article implements Serializable {
     @Column(name="description")
     private String description;
 
-    @Column(name="prix")
-    private float prix;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Format> formats;
 
     public long getIdArticle() {
         return idArticle;
@@ -50,11 +47,11 @@ public class Article implements Serializable {
         this.description = description;
     }
 
-    public float getPrix() {
-        return prix;
+    public List<Format> getFormats() {
+        return formats;
     }
 
-    public void setPrix(float prix) {
-        this.prix = prix;
+    public void setFormats(List<Format> formats) {
+        this.formats = formats;
     }
 }

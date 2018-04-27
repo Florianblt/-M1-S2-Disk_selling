@@ -29,7 +29,6 @@ CREATE TABLE Article
   idArticle serial NOT NULL,
   titre varchar(100) NOT NULL,
   description varchar(255) NOT NULL,
-  prix numeric(8,2) NOT NULL,
   PRIMARY KEY (idArticle)
 );
 
@@ -38,6 +37,7 @@ CREATE Table Format
   idFormat serial NOT NULL,
   idArticle int NOT NULL references Article,
   libelleFormat varchar(100) NOT NULL,
+  prix numeric(8,2) NOT NULL,
   PRIMARY KEY(idFormat)
 );
 
@@ -50,5 +50,5 @@ CREATE Table LigneArticle
 );
 
 
-INSERT INTO Article VALUES (DEFAULT,'Article de test','Description de test',20);
-INSERT INTO Format VALUES (DEFAULT, 1, 'Disque');
+INSERT INTO Article VALUES (DEFAULT,'Article de test','Description de test');
+INSERT INTO Format VALUES (DEFAULT, 1, 'Disque',20);
