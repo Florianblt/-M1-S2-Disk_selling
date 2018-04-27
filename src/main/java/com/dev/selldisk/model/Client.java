@@ -2,6 +2,7 @@ package com.dev.selldisk.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="client")
@@ -20,6 +21,9 @@ public class Client implements Serializable {
 
     @Column(name="password")
     private String password;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Liste> liste;
 
 
     public long getIdClient() {

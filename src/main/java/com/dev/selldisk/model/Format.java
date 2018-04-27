@@ -1,18 +1,19 @@
 package com.dev.selldisk.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="format")
-public class Format {
+public class Format implements Serializable {
 
     @Id
     @Column(name="idformat")
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long idFormat;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @Column(name="idarticle")
+    @ManyToOne(cascade = CascadeType.ALL,targetEntity = Article.class)
+    @JoinColumn(name="idarticle")
     private long idArticle;
 
     @Column(name="libelleformat")
