@@ -23,10 +23,9 @@ public class Liste{
     private float total;
 
     @ManyToOne(cascade = CascadeType.ALL,targetEntity = Client.class)
-    @JoinColumn(name="idclient")
     private long idClient;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idListe", cascade = CascadeType.ALL)
     private List<LigneArticle> ligneArticles;
 
     public long getIdListe() {

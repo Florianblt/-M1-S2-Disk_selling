@@ -16,7 +16,7 @@ public class Artiste implements Serializable{
     @Column(name="nomartiste")
     private String nomArticle;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idArtiste", cascade = CascadeType.ALL)
     private List<Artiste> articles;
 
     public long getIdArtiste() {

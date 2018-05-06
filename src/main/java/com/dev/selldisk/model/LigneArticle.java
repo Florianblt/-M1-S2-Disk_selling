@@ -10,12 +10,10 @@ public class LigneArticle implements Serializable {
 
     @Id
     @ManyToOne(cascade = CascadeType.ALL,targetEntity = Article.class)
-    @JoinColumn(name="idarticle")
     private long idArticle;
 
     @Id
     @ManyToOne(cascade = CascadeType.ALL, targetEntity = Liste.class)
-    @JoinColumn(name="idliste")
     private long idListe;
 
     @Column(name="quantite")

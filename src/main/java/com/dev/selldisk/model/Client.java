@@ -22,7 +22,7 @@ public class Client implements Serializable {
     @Column(name="password")
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idClient", cascade = CascadeType.ALL)
     private List<Liste> liste;
 
 

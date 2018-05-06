@@ -13,7 +13,6 @@ public class Format implements Serializable {
     private long idFormat;
 
     @ManyToOne(cascade = CascadeType.ALL,targetEntity = Article.class)
-    @JoinColumn(name="idarticle")
     private long idArticle;
 
     @Column(name="libelleformat")

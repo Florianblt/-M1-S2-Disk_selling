@@ -24,13 +24,12 @@ public class Article implements Serializable {
     private String jaquette;
 
     @ManyToOne(cascade = CascadeType.ALL,targetEntity = Artiste.class)
-    @JoinColumn(name="idArtiste")
     private long idArtiste;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idArticle", cascade = CascadeType.ALL)
     private List<Format> formats;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "idArticle", cascade = CascadeType.ALL)
     private List<LigneArticle> ligneArticles;
 
     public long getIdArticle() {
