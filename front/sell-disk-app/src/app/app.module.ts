@@ -9,6 +9,7 @@ import {ArticleComponent} from "./article/article.component";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "./material.module";
+import {ArticleService} from "./services/article-service.service";
 
 
 @NgModule({
@@ -24,7 +25,9 @@ import {MaterialModule} from "./material.module";
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    ArticleService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

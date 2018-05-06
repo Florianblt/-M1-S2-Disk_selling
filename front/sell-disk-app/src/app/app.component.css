@@ -1,0 +1,19 @@
+.toolbar {
+}
+
+.title-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.icon-toolbar{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+mat-icon {
+  margin-left: 10px;
+  cursor: pointer;
+}

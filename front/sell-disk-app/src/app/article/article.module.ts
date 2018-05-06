@@ -6,6 +6,8 @@ import { ArticleComponent } from './article.component';
   imports: [
     CommonModule
   ],
-  declarations: [ArticleComponent]
+  declarations: [
+
+  ]
 })
 export class ArticleModule { }
