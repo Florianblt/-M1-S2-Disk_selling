@@ -1,12 +1,9 @@
-<div>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row class="toolbar">
-      <span class="title-toolbar">DiskSales</span>
-      <span class="icon-toolbar">
-        <mat-icon matTooltip="Profil">person</mat-icon>
-        <mat-icon matTooltip="Panier">shopping</mat-icon>
-      </span>
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="primary">
+<mat-toolbar-row class="toolbar-content">
+  <span class="title-toolbar" (click)="backToHome()">DiskSales</span>
+  <span class="space"></span>
+  <mat-icon matTooltip="Panier">shopping_cart</mat-icon>
+  <mat-icon matTooltip="Profil" (click)="goProfil()">person</mat-icon>
+</mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

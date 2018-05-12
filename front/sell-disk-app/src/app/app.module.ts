@@ -10,24 +10,32 @@ import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MaterialModule} from "./material.module";
 import {ArticleService} from "./services/article-service.service";
+import {DetailArticleComponent} from "./detail-article/detail-article.component";
+import {ConnexionDialogComponent} from "./connexion-dialog/connexion-dialog.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
-    ArticleComponent
+    DetailArticleComponent,
+    ConnexionDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+  ],
+  entryComponents: [
+    ConnexionDialogComponent,
   ],
   providers: [
     ArticleService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

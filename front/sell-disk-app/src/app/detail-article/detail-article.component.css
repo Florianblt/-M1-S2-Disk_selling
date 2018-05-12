@@ -1,0 +1,103 @@
+.stage-one {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.stage-two {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.jaquette-article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 250px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}
+
+.middle-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+.infos {
+  margin: 15px;
+}
+
+.action-area {
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.format-card {
+  width: 100px;
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.card-red {
+  width: 100px;
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  color: white;
+  background-color: #3f51b5;
+}
+
+.card-red:hover {
+  box-shadow: inset 0 0 1em black;
+}
+
+.format-card:hover {
+  box-shadow: inset 0 0 1em #3f51b5;
+}
+
+.add-basket {
+   color: #3f51b5;
+   cursor: pointer;
+   font-size: 48px;
+}
+
+.add-basket:hover {
+  text-shadow: 0 0 1em #3f51b5;
+}
+
+.space {
+  flex: 1 1 auto;
+}
+
+.right-part {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre-article {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.artiste {
+  font-size: 20px;
+  color: #939393;
+}

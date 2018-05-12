@@ -1,0 +1,30 @@
+<div *ngIf="article">
+  <div class="stage-one">
+    <div class="jaquette-article">
+      <img src="{{article.jaquette}}">
+    </div>
+    <div class="middle-part">
+      <div class="infos">
+        <div class="titre-article">{{article.titre}}</div>
+        <div class="artiste">{{article.artiste.nomArtiste}}</div>
+      </div>
+      <div class="action-area">
+        <mat-card [ngClass]="[format !== selectedFormat?'format-card': 'card-red']" *ngFor="let format of article.formats" (click)="selectThis(format)">
+          <div>
+            {{format.libelleFormat}}
+          </div>
+          <span class="space"></span>
+          <div>
+            {{format.prix}}€
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="right-part">
+      <mat-icon *ngIf="selectedFormat" class="add-basket" (click)="addToBasket()">add_shopping_cart</mat-icon>
+    </div>
+  </div>
+  <div class="stage-two">
+    {{article.description}}
+  </div>
+</div>
