@@ -10,3 +10,8 @@ mat-icon {
   padding: 0 14px;
   cursor: pointer;
 }
+
+.custom-dialog-container .mat-dialog-container {
+  background-color: red;
+  padding: 0px !important;
+}

@@ -7,6 +7,7 @@ import java.util.List;
 public interface IClientService {
     List<Client> getAllClients();
     Client getClientById(long idClient);
+    Client connexionClient(String email);
     boolean addClient(Client client);
     void updateClient(Client client);
     void deleteClient(int idClient);

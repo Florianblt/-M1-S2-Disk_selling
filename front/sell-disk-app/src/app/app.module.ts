@@ -12,6 +12,10 @@ import {MaterialModule} from "./material.module";
 import {ArticleService} from "./services/article-service.service";
 import {DetailArticleComponent} from "./detail-article/detail-article.component";
 import {ConnexionDialogComponent} from "./connexion-dialog/connexion-dialog.component";
+import {FormsModule} from "@angular/forms";
+import {ClientService} from "./services/client.service";
+import {LocalStorageService} from "./services/local-storage.service";
+import {ProfilComponent} from "./profil/profil.component";
 
 
 @NgModule({
@@ -20,6 +24,7 @@ import {ConnexionDialogComponent} from "./connexion-dialog/connexion-dialog.comp
     ArticleComponent,
     DetailArticleComponent,
     ConnexionDialogComponent,
+    ProfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,12 +32,15 @@ import {ConnexionDialogComponent} from "./connexion-dialog/connexion-dialog.comp
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule
   ],
   entryComponents: [
     ConnexionDialogComponent,
   ],
   providers: [
     ArticleService,
+    ClientService,
+    LocalStorageService
   ],
   bootstrap: [
     AppComponent

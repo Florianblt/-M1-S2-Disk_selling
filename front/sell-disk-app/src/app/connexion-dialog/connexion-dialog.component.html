@@ -3,12 +3,15 @@
 </mat-toolbar>
 <div class="form-content">
   <mat-form-field class="full-width">
-    <input matInput placeholder="Nom" value="">
+    <input matInput placeholder="Nom" value="" [(ngModel)]="id">
   </mat-form-field>
   <mat-form-field class="full-width">
-    <input type="password" matInput placeholder="Mot de passe" value="">
+    <input type="password" matInput placeholder="Mot de passe" value="" [(ngModel)]="mdp">
   </mat-form-field>
 </div>
-<button mat-button (click)="close()" class="btn-connexion">Connexion</button>
-<button mat-button (click)="close()" class="btn-connexion">Annuler</button>
+<div class="btn-area">
+  <button mat-button (click)="close()" class="btn-connexion">Connexion</button>
+  <button mat-button (click)="close()" class="btn-cancel">Annuler</button>
+</div>
+
 

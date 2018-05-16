@@ -4,6 +4,7 @@
   <span class="space"></span>
   <mat-icon matTooltip="Panier">shopping_cart</mat-icon>
   <mat-icon matTooltip="Profil" (click)="goProfil()">person</mat-icon>
+  <mat-icon *ngIf="user" matTooltip="Déconnexion" (click)="disconnect()">power_settings_new</mat-icon>
 </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

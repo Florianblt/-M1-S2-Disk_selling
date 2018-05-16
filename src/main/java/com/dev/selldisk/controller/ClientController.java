@@ -27,6 +27,18 @@ public class ClientController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("get/{email}/{mdp}")
+    public ResponseEntity<Client> connexionClient(@PathVariable("email") String email,@PathVariable("mdp") String mdp){
+        Client client = clientService.connexionClient(email);
+        if( mdp.equals(client.getPassword())) {
+            return new ResponseEntity<Client>(client, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<Client>(new Client(), HttpStatus.UNAUTHORIZED);
+        }
+    }
+
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("getAll")
     public ResponseEntity<List<Client>> getAllClients(){
         List<Client> list = clientService.getAllClients();
