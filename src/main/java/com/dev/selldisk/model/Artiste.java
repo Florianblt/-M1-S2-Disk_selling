@@ -18,8 +18,9 @@ public class Artiste implements Serializable{
     private long idArtiste;
 
     @Column(name="nomartiste")
-    private String nomArticle;
+    private String nomArtiste;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "artiste", cascade = CascadeType.ALL)
     private List<Article> articles;
 
@@ -31,12 +32,12 @@ public class Artiste implements Serializable{
         this.idArtiste = idArtiste;
     }
 
-    public String getNomArticle() {
-        return nomArticle;
+    public String getNomArtiste() {
+        return nomArtiste;
     }
 
-    public void setNomArticle(String nomArticle) {
-        this.nomArticle = nomArticle;
+    public void setNomArtiste(String nomArticle) {
+        this.nomArtiste = nomArticle;
     }
 
     public List<Article> getArticles() {

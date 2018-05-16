@@ -29,6 +29,12 @@ public class ClientServiceImpl implements IClientService {
     }
 
     @Override
+    public Client connexionClient(String email) {
+        Client obj = clientRepository.findByMail(email).get(0);
+        return obj;
+    }
+
+    @Override
     public boolean addClient(Client client) {
         List<Client> list = clientRepository.findByMail(client.getMail());
         if(list.size() > 0)

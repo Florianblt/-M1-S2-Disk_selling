@@ -1,19 +1,13 @@
-<mat-card class="article-card">
-  <img matCardImage class="jaquette-article" src="https://static.designmynight.com/uploads/2015/08/MJhalloween-thriller-share2-optimised.jpg" alt="Jaquette">
-  <div class="titre-article">
-    {{article.titre}}
-  </div>
-  <div class="detail-article">
-    {{article.description}}
-  </div>
-  <div class="action-article">
-    <button mat-button (click)="removeArticle()">
-      <mat-icon class="remove-article">remove</mat-icon>
-    </button>
-    <div>{{nbArticle}}</div>
-    <button mat-button (click)="addArticle()">
-      <mat-icon class="add-article">add</mat-icon>
-    </button>
-  </div>
-</mat-card>
-
+<div class="articles">
+  <mat-card class="article-card" *ngFor="let article of articles" (click)="goDetail(article.idArticle)">
+    <div class="jaquette-article">
+      <img matCardImage src={{article.jaquette}} alt="Jaquette">
+    </div>
+    <div class="titre-article">
+      {{article.titre}}
+    </div>
+    <div class="nom-artiste">
+      {{article.artiste.nomArtiste}}
+    </div>
+  </mat-card>
+</div>

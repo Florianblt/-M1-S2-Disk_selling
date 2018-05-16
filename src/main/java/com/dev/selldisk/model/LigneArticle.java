@@ -16,8 +16,8 @@ public class LigneArticle implements Serializable {
 
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL,targetEntity = Article.class)
-    @MapsId("idArticle")
-    private Article article;
+    @MapsId("idFormat")
+    private Format article;
 
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL, targetEntity = Liste.class)
@@ -53,11 +53,11 @@ public class LigneArticle implements Serializable {
         return Objects.hash(article, liste);
     }
 
-    public Article getArticle() {
+    public Format getArticle() {
         return article;
     }
 
-    public void setArticle(Article article) {
+    public void setArticle(Format article) {
         this.article = article;
     }
 

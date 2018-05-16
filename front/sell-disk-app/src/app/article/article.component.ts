@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Article} from '../models/article';
 import {HttpClient} from "@angular/common/http";
 import {ArticleService} from "../services/article-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-article',
@@ -10,26 +11,23 @@ import {ArticleService} from "../services/article-service.service";
 })
 export class ArticleComponent implements OnInit {
 
-  article: any;
-  nbArticle: number;
+  articles: Article[];
 
-  constructor( private articleService: ArticleService) {
-    this.nbArticle = 0;
-
+  constructor( private articleService: ArticleService,
+               private router: Router) {
+    this.articles = [];
   }
 
   ngOnInit() {
-    this.article = this.articleService.getAllArticle();
+    this.articleService.getAllArticle().subscribe(data => {
+      this.articles = data;
+    });
   }
 
-  public addArticle(){
-    this.nbArticle += 1;
+  goDetail(idArticle: number) {
+    this.router.navigate(['article/' + idArticle]);
   }
 
-  public removeArticle() {
-    if(this.nbArticle > 0) {
-      this.nbArticle -= 1;
-    }
-  }
+
 
 }

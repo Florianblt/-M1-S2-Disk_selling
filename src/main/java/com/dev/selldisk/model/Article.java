@@ -28,7 +28,6 @@ public class Article implements Serializable {
     @Column(name="jaquette")
     private String jaquette;
 
-    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL,targetEntity = Artiste.class)
     @JoinColumn(name = "idartiste")
     private Artiste artiste;
