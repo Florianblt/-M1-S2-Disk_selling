@@ -1,74 +1,6 @@
-DROP TABLE IF EXISTS LigneArticle CASCADE;
-DROP TABLE IF EXISTS Format CASCADE;
-DROP TABLE IF EXISTS Article CASCADE;
-DROP TABLE IF EXISTS Liste CASCADE;
-DROP TABLE IF EXISTS Client CASCADE;
-DROP TABLE IF EXISTS article_formats CASCADE;
-DROP TABLE IF EXISTS article_ligne_articles CASCADE;
-DROP TABLE IF EXISTS artiste_articles CASCADE;
-DROP TABLE IF EXISTS client_liste CASCADE;
-DROP TABLE IF EXISTS liste_ligne_articles CASCADE;
-DROP TABLE IF EXISTS artiste CASCADE;
-
-
-CREATE TABLE Client
-(
-  idClient int NOT NULL,
-  nom varchar(100) NOT NULL,
-  mail varchar(100) NOT NULL,
-  password varchar(100) NOT NULL,
-  PRIMARY KEY (idClient)
-);
-
-CREATE TABLE Liste
-(
-  idListe int NOT NULL,
-  date Date NOT NULL,
-  etat int NOT NULL,
-  total numeric(8,2) NOT NULL,
-  idClient int NOT NULL,
-  PRIMARY KEY (idListe),
-  FOREIGN KEY (idClient) REFERENCES Client(idClient)
-);
-
-CREATE TABLE Artiste
-(
-  idArtiste serial NOT NULL,
-  nomArtiste varchar(100) NOT NULL,
-  PRIMARY KEY (idArtiste)
-);
-
-CREATE TABLE Article
-(
-  idArticle serial NOT NULL,
-  titre varchar(100) NOT NULL,
-  description varchar(255) NOT NULL,
-  jaquette varchar(255) NOT NULL,
-  idArtiste int NOT NULL REFERENCES Artiste,
-  PRIMARY KEY (idArticle)
-);
-
-CREATE Table Format
-(
-  idFormat serial NOT NULL,
-  idArticle int NOT NULL REFERENCES Article,
-  libelleFormat varchar(100) NOT NULL,
-  prix numeric(8,2) NOT NULL,
-  PRIMARY KEY(idFormat)
-);
-
-CREATE Table LigneArticle
-(
-  idArticle int references Article,
-  idListe int references Liste,
-  quantite int NOT NULL,
-  primary key (idArticle, idListe)
-);
-
 INSERT INTO Artiste(idArtiste, nomArtiste) VALUES (1, ' Michael Jackson');
 INSERT INTO Artiste(idArtiste, nomArtiste) VALUES (2, 'Johnny Hallyday');
 INSERT INTO Article(idArticle, titre, description, jaquette, idArtiste) VALUES (
-
   1,
   'Thriller',
   'Thriller est le chef-d''oeuvre qui propulse Michael Jackson au rang de star internationale.',
@@ -90,6 +22,7 @@ INSERT INTO Article(idArticle, titre, description, jaquette, idArtiste) VALUES (
   2
 );
 
+INSERT INTO Client(idClient, nom, mail, password) values (1,'Pierre','test','test');
 INSERT INTO Format(idFormat, libelleFormat, prix, idArticle) VALUES (1, 'Disque', 20, 1);
 INSERT INTO Format(idFormat, libelleFormat, prix, idArticle) VALUES (2, 'CD', 15, 1);
 INSERT INTO Format(idFormat, libelleFormat, prix, idArticle) VALUES (3, 'MP3', 10, 1);
@@ -99,3 +32,5 @@ INSERT INTO Format(idFormat, libelleFormat, prix, idArticle) VALUES (6, 'MP3', 1
 INSERT INTO Format(idFormat, libelleFormat, prix, idArticle) VALUES (7, 'Disque', 20, 3);
 INSERT INTO Format(idFormat, libelleFormat, prix, idArticle) VALUES (8, 'CD', 15, 3);
 INSERT INTO Format(idFormat, libelleFormat, prix, idArticle) VALUES (9, 'MP3', 10, 3);
+
+INSERT INTO Client(idClient, nom, mail, password) VALUES (1,'test', 'test', 'test');

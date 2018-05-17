@@ -6,6 +6,9 @@ import {MatDialog} from "@angular/material";
 import {ConnexionDialogComponent} from "./connexion-dialog/connexion-dialog.component";
 import {ClientService} from "./services/client.service";
 import {LocalStorageService} from "./services/local-storage.service";
+import {Liste} from "./models/liste";
+import {Article} from "./models/article";
+import {Format} from "./models/format";
 
 @Component({
   selector: 'app-root',
@@ -15,6 +18,7 @@ import {LocalStorageService} from "./services/local-storage.service";
 export class AppComponent implements OnInit{
   title = 'Vente de Disque';
   user: User;
+  panier: Liste;
 
   constructor(private http: HttpClient,
               private router: Router,
@@ -52,5 +56,9 @@ export class AppComponent implements OnInit{
     this.user = null;
     this.localStorageService.disconnect();
     this.router.navigate(['']);
+  }
+
+  addToBascket(article: Format) {
+    this.panier.add(article);
   }
 }

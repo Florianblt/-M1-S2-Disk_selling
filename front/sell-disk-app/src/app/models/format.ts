@@ -1,5 +1,5 @@
 export class Format {
-  idFormat: number;
+  idFormat?: number;
   libelleFormat: string;
   prix: number;
 }
